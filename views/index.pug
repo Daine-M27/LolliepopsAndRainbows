@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  .container
+    .row(style="min-height:300px")
+      .col-6
+      .col-6
+    .row(style="min-height:0px")
+      .col-12.text-center
+        .btn-group
+          a.btn.btn-outline-dark(href="/") Home                    
+          a.btn.btn-outline-dark(href="/gallery/family") Family
+          a.btn.btn-outline-dark(href="/gallery/kids") Kids
+          a.btn.btn-outline-dark(href="/gallery/newBorn") Newborn
+          a.btn.btn-outline-dark(href="/gallery/smokeBombs") Smoke Bombs
+          a.btn.btn-outline-dark(href="/gallery/petsEvents") Pets & Events
+          a.btn.btn-outline-dark(href="/about") About     
+          a.btn.btn-outline-dark(href="/email") Contact Us
+    .row(style="min-height:540px")
+      .col-1
+      .col-10
+        .container
+          #slideShowMain.row
+            div(style="height:600px; display:flex; justify-content:center").col-12.text-center
+              if galleryImages
+                img(id="mainSlide" name="slide" style="height:100%" src=`\\images\\${gallerySelected}\\${galleryImages[0].imageName}`)
+              else
+                img(id="mainSlide" name="slide" style="height:100%")
+          #slideShowThumbnails.row(style="min-height:80px")
+            .col-12.text-center
+              .btn-group
+                if galleryImages 
+                  //- - var images = [galleryImages]
+                  each image in galleryImages
+                    button.btn.p-0.m-0
+                      img.p-0.m-0(src=`\\images\\${gallerySelected}\\${image.imageName}` style="width:80px; height:80px; object-fit:cover")
+      .col-1
+  append head
+        script(src='/javascripts/main.js')
+  //- p Welcome to #{title}
+  //- add componenets for gallery
+  //- add music controls and auto play
