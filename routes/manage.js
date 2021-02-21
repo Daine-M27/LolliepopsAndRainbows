@@ -17,17 +17,17 @@ const readJson = (path, cb) => {
   })
 }
 
-let getJsonText = (filepath) => {
-  return new Promise((resolve, reject) => {
-    fs.readFile(require.resolve(path), (err, data) => {
-      if (err) {
-        reject(err)
-      } else {
-        resolve(JSON.parse(data))
-      }
-    })
-  })
-}
+// let getJsonText = (filepath) => {
+//   return new Promise((resolve, reject) => {
+//     fs.readFile(require.resolve(path), (err, data) => {
+//       if (err) {
+//         reject(err)
+//       } else {
+//         resolve(JSON.parse(data))
+//       }
+//     })
+//   })
+// }
 
 router.get('/', (req, res) => {
   const galleryCounts = {};
@@ -53,7 +53,20 @@ router.post('/', (req, res) => {
       // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
       let image = req.files.image;
       let galleryPosition = req.body.orderNumber
-      
+      // console.log(galleries);
+      // set position in gallery
+      //let galleryData = galleries[req.body.folders].splice(galleryPosition-1, 0, {"imageName":image.name}) 
+
+      const storeData = (data) => {
+        return new Promise((resolve, reject) => {
+          try {
+            fs.writeFileSync("public\\javascripts\\gallery.json", JSON.stringify(data))
+            resolve();
+          } catch (err) {
+            reject();
+          }
+        })  
+      }
       console.log(galleryPosition);
 
       // Use the mv() method to place the file somewhere on your server
@@ -62,19 +75,16 @@ router.post('/', (req, res) => {
           return res.status(500).send(err);
         }
         
-        galleries[req.body.folders].splice(galleryPosition-1, 0, {"imageName":image.name})
+        // set position in gallery
+        galleries[req.body.folders].splice(galleryPosition-1, 0, {"imageName":image.name})        
         
-        // console.log(galleries);
-        const storeData = (data) => {
-          try {
-            fs.writeFileSync("public\\javascripts\\gallery.json", JSON.stringify(data))
-          } catch (err) {
-            console.error(err)
-          }
-        }
-        storeData(galleries);
-        
-        res.redirect('/manage');
+        storeData(galleries).then(() => {
+          res.redirect('/manage');
+        })
+        .catch((err) => {
+          console.log(err)
+          res.redirect('/manage');
+        });       
       });
 
   })
