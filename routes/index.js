@@ -16,7 +16,16 @@ const readJson = (path, cb) => {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', imageList:''});
+  const allImages = [
+    {
+      'folder': 'folderName',
+      'imageName': 'exampleName'
+    }
+  ]
+
+  
+
+  res.render('index', { title: 'Express', allImages});
 });
 
 router.get('/gallery/:gallery', function(req, res, next) {
