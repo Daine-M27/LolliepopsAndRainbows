@@ -1,5 +1,5 @@
 extends layout
-
+include mixins/galleryNav
 block content
   .container
     .row(style="min-height:300px")
@@ -7,36 +7,26 @@ block content
       .col-6
     .row(style="min-height:0px")
       .col-12.text-center
-        .btn-group
-          a.btn.btn-outline-dark(href="/") Home                    
-          a.btn.btn-outline-dark(href="/gallery/family") Family
-          a.btn.btn-outline-dark(href="/gallery/weddings") Weddings
-          a.btn.btn-outline-dark(href="/gallery/kids") Kids
-          a.btn.btn-outline-dark(href="/gallery/newBorn") Newborn
-          a.btn.btn-outline-dark(href="/gallery/cakeSmash") Cake Smash
-          a.btn.btn-outline-dark(href="/gallery/smokeBombs") Smoke Bombs
-          a.btn.btn-outline-dark(href="/gallery/petsEvents") Pets & Events
-          a.btn.btn-outline-dark(href="/about") About     
-          a.btn.btn-outline-dark(href="/email") Contact Us
+        +galleryNav
     .row(style="min-height:540px")
       .col-1
       .col-10
         .container
           .row
-            div(style="height:400px; ").col-12
+            div(style="height:400px; ").col-12.textBody
               p &nbsp;
-              p
-                | Hello and welcome to my world! I&rsquo;m so honored you are visiting. Lollipops &amp; Rainbow Photography, LLC specializes in capturing those special memories in life&rsquo;s events. In the midst of chaos and changes there are short, sporadic moments that make us laugh, smile and stop to enjoy. In those moments you are transported to a world that is happy and stress free&mldr; Lollipops and Rainbow world!
-              p
-                | I live in Weddington, NC and I&rsquo;m married to my high school sweetheart. We drive each other nuts everyday &ndash; but we would not want it any other way. We have 2 beautiful daughters that definitely keep us on our toes and entertained. They never shy away from an opportunity to be in front of the camera and you&rsquo;ll no doubt see them all over my page. We have a new puppy boy who is super spoiled.
-              p
-                | I look forward to hearing from you and letting me know how I can help you capture 
-                em your Lollipops &amp; Rainbow memories
-                | .
+              .fancyText
+                p
+                  |  Hello and welcome to my world! I&rsquo;m so honored you are visiting. Lollipops &amp; Rainbow Photography, LLC specializes in capturing those special memories in life&rsquo;s events. In the midst of chaos and changes there are short, sporadic moments that make us laugh, smile and stop to enjoy. In those moments you are transported to a world that is happy and stress free&mldr; Lollipops and Rainbow world!
+                p
+                  | I live in Weddington, NC and I&rsquo;m married to my high school sweetheart. We drive each other nuts everyday &ndash; but we would not want it any other way. We have 2 beautiful daughters that definitely keep us on our toes and entertained. They never shy away from an opportunity to be in front of the camera and you&rsquo;ll no doubt see them all over my page. We have a new puppy boy who is super spoiled.
+                p
+                  | I look forward to hearing from you and letting me know how I can help you capture 
+                  em your Lollipops &amp; Rainbow memories
+                  | .
               p &nbsp;  
               p
-                strong Family sessions
-                em :
+                h5  Family sessions
               p
                 | While setting the delay timer on your family camera and running to get in place can be entertaining (and good exercise!), let me help take the stress out of capturing your family memories. Parks and other outdoor areas make for great settings. Family sessions usually take about 45 minutes to 1 hour depending how many people are involved.
               p Price includes:
@@ -50,7 +40,7 @@ block content
                 em Estimated price: $250
               p &nbsp;
               p
-                strong Newborn
+                h5 Newborn
               p
                 | My favorite type of photographs! I love working with the infants. The children change so fast at this stage and you want to have these memories captured forever. These sessions generally take about 1-2 hours. There is a lot of patience with newborns; I can work around their schedules.
               p Price includes:
@@ -64,7 +54,7 @@ block content
                 em Estimated Cost: $350
               p &nbsp;
               p
-                strong Babies to Toddlers/ Cake Smash
+                h5 Babies to Toddlers/ Cake Smash
               p
                 | I strive to make the kids comfortable. However, kids can have bad days. I try to do these time slots in the morning before they get tired. However, I&rsquo;m open to other time slots.
               p Price includes:
@@ -78,7 +68,7 @@ block content
                 em Estimated Cost: $200
               p &nbsp;
               p
-                strong Smoke Bombs
+                h5 Smoke Bombs
               p
                 | If you aren&rsquo;t familiar with smoke bombs in photography you have to check these out! They make for unique images, great for taking in motion photos, and can be done in a variety (and mixture) of colors. Safe for young kids and those young at heart! Must be done outdoors.
               p
@@ -94,7 +84,7 @@ block content
                 em Estimated Cost: $250
               p &nbsp;
               p
-                strong Pets
+                h5 Pets
               p
                 | I love furry ones&mldr;or whatever your extra family members are covered in (with, well, some limitations :). I know they are a part of the family&mldr;and sometimes they ARE the children! In any case, they also deserve the spotlight at times.
               p Price includes:
@@ -108,7 +98,7 @@ block content
                 em Estimated cost: $100
               p &nbsp;
               p
-                strong Event Planning
+                h5 Event Planning
               p
                 | Birthday parties, surprise parties, graduations, fundraisers to weddings&mldr; I help with all details, organization, coordination, setting schedules and much, much, more. Let me help relieve the stress of overseeing the event. I am the one who can take care of the logistics before and during the festivities, so your only focus is what you are celebrating on that day. Please contact me to discuss details.
               p

@@ -1,5 +1,5 @@
 extends layout
-
+include mixins/galleryNav
 block content
   .container
     .row(style="min-height:300px")
@@ -7,17 +7,7 @@ block content
       .col-6
     .row(style="min-height:0px")
       .col-12.text-center
-        .btn-group
-          a.btn.btn-outline-dark(href="/") Home                    
-          a.btn.btn-outline-dark(href="/gallery/family") Family
-          a.btn.btn-outline-dark(href="/gallery/weddings") Weddings
-          a.btn.btn-outline-dark(href="/gallery/kids") Kids
-          a.btn.btn-outline-dark(href="/gallery/newBorn") Newborn
-          a.btn.btn-outline-dark(href="/gallery/cakeSmash") Cake Smash
-          a.btn.btn-outline-dark(href="/gallery/smokeBombs") Smoke Bombs
-          a.btn.btn-outline-dark(href="/gallery/petsEvents") Pets & Events
-          a.btn.btn-outline-dark(href="/about") About     
-          a.btn.btn-outline-dark(href="/email") Contact Us
+        +galleryNav
     .row(style="min-height:540px")
       .col-1
       .col-10

@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+.fancyText {
+  font-family: cursive;
+  font-size: large;
+}
+
+.textBody p {
+  text-indent: 10px;
+}
