@@ -22,7 +22,7 @@ router.post('/', function(req, res, next) {
         res.render("contactSubmit", { title: "Message Sent", message: "Thank you for your support!" });
     }).catch((error) => {
         console.log(error)
-        res.render("contactSubmit", { title: "Error", message: error, emailAddr });
+        res.render("contactSubmit", { title: "Error", message: error, emailAddr: emailAddr });
     })
     
 })  
