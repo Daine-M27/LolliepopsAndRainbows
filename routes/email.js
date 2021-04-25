@@ -20,7 +20,7 @@ router.post('/', function(req, res, next) {
       })
     .then(() => {
         res.render("contactSubmit", { title: "Message Sent", message: "Thank you for your support!" });
-    }).catch((error) => {
+    }).catch((err) => {
         console.log(err)
         res.render("error", { title: "Error", message: err, emailAddr: emailAddr });
     })
