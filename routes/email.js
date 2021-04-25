@@ -9,8 +9,9 @@ router.get('/', function (req, res, next) {
   })
   
 router.post('/', function(req, res, next) {
+    const emailAddr = process.env.EMAIL_ADDRESS
     mail({
-        emailAddress: process.env.EMAIL_ADDRESS,
+        emailAddress: emailAddr,
         subject: "Lollipops & Rainbows Contact Form",
         text: `
         Message From: ${req.body.firstName}
@@ -21,7 +22,7 @@ router.post('/', function(req, res, next) {
         res.render("contactSubmit", { title: "Message Sent", message: "Thank you for your support!" });
     }).catch((error) => {
         console.log(error)
-        res.render("contactSubmit", { title: "Error", message: error });
+        res.render("contactSubmit", { title: "Error", message: error, emailAddr });
     })
     
 })  
