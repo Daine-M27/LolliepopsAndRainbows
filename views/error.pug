@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  h2.addr= emailAddr
-  pre #{error.stack}
+  h1= 'Application Error'
+  h2= error
+  .addr= emailAddr
+  
