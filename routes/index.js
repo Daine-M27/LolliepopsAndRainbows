@@ -4,14 +4,14 @@ const fs = require('fs')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  const allImages = [
-    {
-      'folder': 'folderName',
-      'imageName': 'exampleName'
-    }
-  ] 
+  const galleryName = 'home'
+  const imageNames = []
+  fs.readdirSync(`./public/images/${galleryName}`).forEach(imageName => {
+    console.log(imageName);
+    imageNames.push({'imageName':imageName})
+  })
 
-  res.render('index', { title: 'Express', allImages});
+  res.render('index', { title: 'Lolliepops and Rainbows', galleryImages:imageNames, gallerySelected:galleryName});
 });
 
 router.get('/gallery/:gallery', function(req, res, next) {
