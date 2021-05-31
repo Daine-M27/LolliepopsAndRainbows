@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(49, 153, 152);
 }
 
 a {
@@ -16,7 +17,14 @@ a {
   text-indent: 10px;
 }
 
-.btn-outline {
-  border: 1px solid #ced4da;
+.btn-outline-dark {
+  border: 1px solid #ffffff;
   border-radius: .25rem;
+  color:#ffffff;
+}
+
+.btn-outline-dark:hover {
+  background-color:rgb(227,179,224);
+  border-color: #ffffff;
+  color:#ffffff;
 }
