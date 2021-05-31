@@ -1,7 +1,19 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(49, 153, 152);
+  /* background-color: rgb(49, 153, 152); */
+  height: 100%;
+  
+}
+.body-bg {
+  background-image:url("../images/DD-Blurred-Background-45543-Preview.jpg");
+  background-repeat: none;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 150%;
+  
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
 }
 
 a {
@@ -18,13 +30,14 @@ a {
 }
 
 .btn-outline-dark {
-  border: 1px solid #ffffff;
+  border: 1px solid rgb(184, 161, 182);
   border-radius: .25rem;
-  color:#ffffff;
+  color:white;
+  background-color: rgb(227,179,224);
 }
 
 .btn-outline-dark:hover {
-  background-color:rgb(227,179,224);
-  border-color: #ffffff;
-  color:#ffffff;
+  background-color:white;
+  border-color: rgb(227,179,224);
+  color:rgb(227,179,224);
 }
