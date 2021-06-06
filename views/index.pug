@@ -1,5 +1,6 @@
 extends layout
 include mixins/galleryNav
+include mixins/links
 block content
   .container
     .row(style="min-height:300px")
@@ -7,6 +8,13 @@ block content
         div(style="height:250px; display:flex; justify-content:center; padding-top:20px").col-12.text-center
           img(id='logo' src='\\images\\logo.png')
       .col-6
+        .row
+          .col-12
+            div(style="display:flex; justify-content:left; padding-top:80px").col-12
+              p.fancyText "The world moves fast, changing everything around us with each new day. Photography is a gift that can keep us in a moment forever, blissfully eternal."
+              p &nbsp;
+            div(style="padding-left:20px")              
+              p.fancyText -Ali Novak
     .row(style="min-height:0px")
       .col-12.text-center
         +galleryNav
@@ -32,6 +40,9 @@ block content
                     button.btn.p-0.m-0
                       img.p-0.m-0(src=`\\images\\${gallerySelected}\\${image.imageName}` style="width:80px; height:80px; object-fit:cover")
       .col-1
+    .row 
+      .col-12.text-center 
+        +links
   append head
         script(src='/javascripts/main.js')
   //- p Welcome to #{title}

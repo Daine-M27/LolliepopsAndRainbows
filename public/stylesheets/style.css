@@ -16,9 +16,9 @@ body {
   -webkit-filter: blur(8px); */
 }
 
-a {
+/* a {
   color: #00B7FF;
-}
+} */
 
 .fancyText {
   font-family: cursive;
@@ -40,4 +40,31 @@ a {
   background-color:white;
   border-color: rgb(227,179,224);
   color:rgb(227,179,224);
+}
+
+.fa {
+  padding: 10px !important;
+  font-size: 20px !important; 
+  width: 50px; 
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa-facebook {
+  background: rgb(227,179,224);
+  color: white;
+}
+.fa-facebook:hover {
+  background: white;
+  color: rgb(227,179,224);
+}
+
+.fa-instagram {
+  background: rgb(227,179,224);
+  color: white;
+}
+
+.fa-instagram:hover {
+  background: white;
+  color: rgb(227,179,224);
 }
