@@ -5,20 +5,15 @@ body {
   height: 100%;
   
 }
-.body-bg {
-  background-image:url("../images/DD-Blurred-Background-45543-Preview.jpg");
-  background-repeat: none;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: 150%;
-  
-  /* filter: blur(8px);
-  -webkit-filter: blur(8px); */
+
+.body-bg { 
+  background: url("../images/Blurred-Background.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-/* a {
-  color: #00B7FF;
-} */
 
 .fancyText {
   font-family: cursive;
