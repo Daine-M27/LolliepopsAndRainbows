@@ -16,22 +16,22 @@ block content
         .container
           p &nbsp;
           h5= title
-          p Please send us an email by clicking the link below!
-          a(href="mailto:LollipopsAndRainbowsStudios@gmail.com") Email
-          //- form.form(action="/email", method="POST")
-          //-   .form-group
-          //-     label(for="firstName") Enter your first name:
-          //-     br
-          //-     input.form-control(type="text", name="firstName", id="firstName", required)
-          //-     br
-          //-     label(for="emailAddress") Enter your email address:
-          //-     br
-          //-     input.form-control(type="email", name="emailAddress", id="emailAddress", required)
-          //-     br
-          //-     label(for="message") Message:
-          //-     br
-          //-     input.form-control( name="message",id="messageBox", required)              
-          //-     br
-          //-     input.btn-lg.btn.btn-outline(type="submit", value="Submit") 
+          p Please send us an email with the form below!
+          //- a(href="mailto:LollipopsAndRainbowsStudios@gmail.com") Email
+          form.form(action="/email", method="POST")
+            .form-group
+              label(for="firstName") Enter your first name:
+              br
+              input.form-control(type="text", name="firstName", id="firstName", required)
+              br
+              label(for="emailAddress") Enter your email address:
+              br
+              input.form-control(type="email", name="emailAddress", id="emailAddress", required)
+              br
+              label(for="message") Message:
+              br
+              textArea.form-control( name="message",id="messageBox", rows=10, required)              
+              br
+              input.btn-lg.btn.btn-outline(type="submit", value="Submit") 
       .col-1
     

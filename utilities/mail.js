@@ -18,11 +18,13 @@ const dotenv = require('dotenv').config({path: '.env'});
 function sendEMail (data){
     return new Promise((resolve,reject) => {
        const transporter = nodemailer.createTransport({
-           service:'gmail',
+           port: 465,
+           host: 'mail.privateemail.com',
            auth: {
                user: process.env.USER_NAME,
                pass: process.env.PASSWORD
-           }
+           },
+           secure: true
        });
 
        const mailOptions = {
